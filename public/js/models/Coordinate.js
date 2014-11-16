@@ -3,14 +3,14 @@ define(['backbone'], function(Backbone) {
   var Coordinate = Backbone.Model.extend({
     defaults: {
       latitude: null,
-      longtitude: null,
+      longitude: null,
       norm_score: false,
       label: null,
       image: null
     },
 
     toLocation: function() {
-      return new google.maps.LatLng(parseFloat(this.get('latitude')), parseFloat(this.get('longtitude')));
+      return new google.maps.LatLng(parseFloat(this.get('latitude')), parseFloat(this.get('longitude')));
     },
 
     toGeoWeight: function() {
