@@ -2,8 +2,8 @@
 define([
   'backbone',
   'map',
-  'collections/Base'
-], function(Backbone, Map, Base) {
+  'collections/Heatmap'
+], function(Backbone, Map, Heatmap) {
   var MainController = Backbone.Controller.extend({
 
     // preliminary routes, will be used for filters
@@ -17,7 +17,7 @@ define([
       this.map = new Map($('#map')[0]).render();
 
       // load collections, then render the instance
-      this.collection = new Base();
+      this.collection = new Heatmap();
       this.collection.fetch();
       this.collection.on('sync', function() {
         this.render(self.map.instance);

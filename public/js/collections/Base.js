@@ -3,13 +3,12 @@ define([
   'backbone',
   'models/Coordinate'
 ], function(Backbone, Coordinate) {
-
   var Base = Backbone.Collection.extend({
     model: function(attrs, options) {
       return new Coordinate(attrs, options);
     },
     
-    url: '/csv?file=nurse_home_viz.csv',
+    url: '',
 
     toGeoWeightCollection: function() {
       var results = [];
@@ -22,17 +21,7 @@ define([
     },
 
     render: function(map) {
-      if (!this.heatmap) {
-        this.heatmap = this.getHeatmap();
-      }
-
-      this.heatmap.setMap(map);
-    },
-
-    getHeatmap: function() {
-      return new google.maps.visualization.HeatmapLayer({
-        data: new google.maps.MVCArray(this.toGeoWeightCollection())
-      });
+      // must implement
     }
   });
 
