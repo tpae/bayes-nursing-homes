@@ -16,7 +16,8 @@ define([
 
     getHeatmap: function() {
       return new google.maps.visualization.HeatmapLayer({
-        data: new google.maps.MVCArray(this.toGeoWeightCollection())
+        data: new google.maps.MVCArray(this.toGeoWeightCollection()),
+        radius: 20
       });
     }
   });

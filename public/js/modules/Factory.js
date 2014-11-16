@@ -37,7 +37,7 @@ define([
         this.collections[results[i].key].render(this.map.instance);
       } else {
         this.collections[results[i].key] = new this.types[results[i].type]({
-          url: '/api/csv?file=nurse_home_viz'
+          url: '/api/csv?file=' + results[i].type + '-' + results[i].name
         });
 
         this.collections[results[i].key].fetch();
