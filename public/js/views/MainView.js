@@ -73,13 +73,26 @@ define([
         }
       } else {
         e.preventDefault();
+        if (target.hasClass('dateFilter')) {
+          var selected = $('.dateFilter.selected').data('key');
+          this.query.remove(selected);
+          
+          $('.dateFilter').removeClass('selected');
+          $('.dateFilter').each(function() {
+            $(this).parent().removeClass('active');
+          });
 
-        if (target.hasClass('selected')) {
-          this.query.remove(target.data('key'));
-          target.removeClass('selected');
-        } else {
           this.query.push(target.data('key'));
           target.addClass('selected');
+          target.parent().addClass('active');
+        } else {
+          if (target.hasClass('selected')) {
+            this.query.remove(target.data('key'));
+            target.removeClass('selected');
+          } else {
+            this.query.push(target.data('key'));
+            target.addClass('selected');
+          }
         }
       }
     },

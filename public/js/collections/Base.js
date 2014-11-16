@@ -11,7 +11,6 @@ define([
 
       if (props.colors) {
         if (!_.isArray(props.colors)) {
-          console.log('prop called', typeof(JSON.parse(props.colors)));
           this.colors = JSON.parse(props.colors);
         } else {
           this.colors = props.colors;
