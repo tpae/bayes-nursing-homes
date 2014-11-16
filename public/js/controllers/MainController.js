@@ -6,36 +6,26 @@ define([
 ], function(Backbone, Map, BaseCollection) {
   var MainController = Backbone.Controller.extend({
 
+    // preliminary routes, will be used for filters
     routes: {
       '': 'index'
     },
 
     initialize: function() {
       var self = this;
+      // initialize map and render
+      this.map = new Map($('#map')[0]).render();
+
+      // load collections, then render the instance
       this.collection = new BaseCollection();
       this.collection.fetch();
       this.collection.on('sync', function() {
-        self.map.render(this.getHeatmap());
+        this.render(self.map.instance);
       });
-    },
-
-    renderMap: function() {
-      this.map = new Map($('#map')[0]);
-
-      this.map.addStyle({
-        featureType: "road",
-        elementType: "geometry",
-        stylers: [
-          { lightness: 100 },
-          { visibility: "simplified" }
-        ]
-      });
-
-      this.map.render();
     },
 
     index: function() {
-      this.renderMap();
+      // index goes here
     }
   });
 
