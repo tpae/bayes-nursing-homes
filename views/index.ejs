@@ -38,14 +38,14 @@
       <div class="clearfix"></div>
       <div id="content" class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="oldpeople">
-          <h3>Old people</h3>
+          <h5>There are currently # of elderly people total in California.</h5>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="house" style="overflow: auto; height: 350px">
           <ul class="checkboxlist">
             <% for (var key in labels) { %>
               <li class="checkbox">
                 <label>
-                  <input type="checkbox" class="mapToggle" data-key="<%=labels[key].type %>:<%=key %>" />
+                  <input type="checkbox" class="mapToggle" data-key="<%=labels[key].type %>:<%=key %>" data-colors="<%=JSON.stringify(labels[key].colors) %>" />
                   <%= labels[key].description %>
                 </label>
             </li>

@@ -1,17 +1,17 @@
 
 module.exports.variables = {
-  cost_self_pay: { description: 'Self pay charges', type: 'heatmap' },
-  num_beds: { description: 'Number of beds', type: 'heatmap' },
-  cost_medicare: { description: 'Medicare charges', type: 'heatmap' },
-  cost_medical: { description: 'Medi-Cal charges', type: 'heatmap' },
-  net_income_margin: { description: 'Net income margin', type: 'heatmap' },
-  occupency_rate: { description: 'Occupency rate', type: 'heatmap' },
-  state_penalty: { description: 'State penalty', type: 'heatmap' },
-  overall_rating: { description: 'CalQualityCare Overall rating', type: 'heatmap' },
-  complaints_deficiencies: { description: 'Compalints and deficiencies', type: 'heatmap' },
-  quality: { description: 'CalQualityCare Quality of care rating', type: 'heatmap' },
-  staff_wages: { description: 'Staff wages', type: 'heatmap' },
-  staff_treatment: { description: 'Staff rating', type: 'heatmap' },
-  fed_penalty: { description: 'Federal penalty', type: 'heatmap' },
-  age: { description: 'Resident age', type: 'heatmap' }
+  cost_self_pay: { description: 'Self pay charges', type: 'heatmap', colors: [ '#bde6bc', '#61b85f' ]},
+  num_beds: { description: 'Number of beds', type: 'heatmap', colors: [ '#c7d7e3', '#7b97ac' ] },
+  cost_medicare: { description: 'Medicare charges', type: 'heatmap', colors: [ '#bde6bc', '#61b85f' ] },
+  cost_medical: { description: 'Medi-Cal charges', type: 'heatmap', colors: [ '#bde6bc', '#61b85f' ] },
+  net_income_margin: { description: 'Net income margin', type: 'heatmap', colors: [ '#c7d7e3', '#7b97ac' ] },
+  occupency_rate: { description: 'Occupency rate', type: 'heatmap', colors: [ '#c7d7e3', '#7b97ac' ] },
+  state_penalty: { description: 'State penalty', type: 'heatmap', colors: [ '#f8c79f', '#eb7a1f' ] },
+  overall_rating: { description: 'CalQualityCare Overall rating', type: 'heatmap', colors: [ '#8fcdde', '#209aba' ] },
+  complaints_deficiencies: { description: 'Compalints and deficiencies', type: 'heatmap', colors: [ '#f8c79f', '#eb7a1f' ] },
+  quality: { description: 'CalQualityCare Quality of care rating', type: 'heatmap', colors: [ '#8fcdde', '#209aba' ] },
+  staff_wages: { description: 'Staff wages', type: 'heatmap', colors: [ '#8fcdde', '#209aba' ] },
+  staff_treatment: { description: 'Staff rating', type: 'heatmap', colors: [ '#8fcdde', '#209aba' ] },
+  fed_penalty: { description: 'Federal penalty', type: 'heatmap', colors: [ '#f8c79f', '#eb7a1f' ] },
+  age: { description: 'Resident age', type: 'heatmap', colors: [ '#c7d7e3', '#7b97ac' ] }
 };

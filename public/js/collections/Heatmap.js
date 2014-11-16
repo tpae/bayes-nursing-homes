@@ -15,9 +15,11 @@ define([
     },
 
     getHeatmap: function() {
+      console.log(this.colors);
       return new google.maps.visualization.HeatmapLayer({
         data: new google.maps.MVCArray(this.toGeoWeightCollection()),
-        radius: 20
+        radius: 20,
+        gradient: (this.colors) ? this.colors : undefined
       });
     }
   });

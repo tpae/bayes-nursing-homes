@@ -294,3 +294,7 @@ li.active .tabs-toggle.warning {
   color: #fff;
   margin-bottom: 10px;
 }
+
+#oldpeople h5 {
+  font-size: 16px;
+}

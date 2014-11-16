@@ -6,6 +6,11 @@ define([
   var Base = Backbone.Collection.extend({
     initialize: function(props) {
       this.url = props.url;
+      this.colors = null;
+
+      if (props.colors) {
+        this.colors = props.colors;
+      }
     },
 
     model: function(attrs, options) {
