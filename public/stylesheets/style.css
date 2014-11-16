@@ -303,3 +303,11 @@ li.active .tabs-toggle.warning {
 #oldpeople h5 b {
   font-family: Dinot Bold;
 }
+
+#warning a.btn {
+  text-transform: uppercase;
+  background-color: #ED6259;
+  color: #FFF;
+  display: block;
+  margin-bottom: 5px;
+}

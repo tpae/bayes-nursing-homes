@@ -11,6 +11,10 @@ define([
       if (props.colors) {
         this.colors = props.colors;
       }
+
+      if (props.radius) {
+        this.radius = props.radius;
+      }
     },
 
     model: function(attrs, options) {

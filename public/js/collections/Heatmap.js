@@ -18,7 +18,7 @@ define([
       console.log(this.colors);
       return new google.maps.visualization.HeatmapLayer({
         data: new google.maps.MVCArray(this.toGeoWeightCollection()),
-        radius: 20,
+        radius: (this.radius) ? parseInt(this.radius, 10) : 20,
         gradient: (this.colors) ? this.colors : undefined
       });
     }

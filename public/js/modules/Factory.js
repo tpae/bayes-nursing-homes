@@ -34,7 +34,8 @@ define([
       } else {
         this.collections[results[i].key] = new this.types[results[i].type]({
           url: '/api/csv?file=' + results[i].type + '-' + results[i].name,
-          colors: $('input[data-key="' + results[i].key + '"]').data('colors')
+          colors: $('input[data-key="' + results[i].key + '"]').data('colors'),
+          radius: $('input[data-key="' + results[i].key + '"]').data('radius')
         });
 
         this.collections[results[i].key].fetch();
