@@ -44,7 +44,7 @@
           <ul class="checkboxlist">
             <% for (var key in labels) { %>
               <li class="checkbox">
-                <label>
+                <label style="color: <%= labels[key].colors[labels[key].colors.length -1] %>">
                   <input type="checkbox" class="mapToggle" data-key="<%=labels[key].type %>:<%=key %>" data-colors="<%=JSON.stringify(labels[key].colors) %>" />
                   <%= labels[key].description %>
                 </label>
