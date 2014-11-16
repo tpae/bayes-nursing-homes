@@ -3,7 +3,7 @@ define([
   'backbone',
   'map',
   'collections/BaseCollection'
-  ], function(Backbone, Map, BaseCollection) {
+], function(Backbone, Map, BaseCollection) {
   var MainController = Backbone.Controller.extend({
 
     routes: {
