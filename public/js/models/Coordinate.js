@@ -7,16 +7,20 @@ define(['backbone'], function(Backbone) {
       weight: false
     },
 
-    toGeoCoordinate: function() {
+    toLocation: function() {
+      return new google.maps.LatLng(parseFloat(this.get('latitude')), parseFloat(this.get('longitude')));
+    },
+
+    toGeoWeight: function() {
       return {
-        location: new google.maps.LatLng(parseFloat(this.get('latitude')), parseFloat(this.get('longitude'))), 
+        location: this.toLocation(), 
         weight: parseFloat(this.get('num_facilities'))
       };
     },
 
     toGeoMarker: function() {
       return new google.maps.Marker({
-        position: new google.maps.LatLng(parseFloat(this.get('latitude')), parseFloat(this.get('longitude')))
+        position: this.toLocation()
       });
     }
   });

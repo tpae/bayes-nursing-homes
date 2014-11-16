@@ -11,11 +11,11 @@ define([
     
     url: '/csv?file=nurse_home_viz.csv',
 
-    toGeoCollection: function() {
+    toGeoWeightCollection: function() {
       var results = [];
 
       this.models.forEach(function(model) {
-        results.push(model.toGeoCoordinate());
+        results.push(model.toGeoWeight());
       });
 
       return results;
@@ -31,7 +31,7 @@ define([
 
     getHeatmap: function() {
       return new google.maps.visualization.HeatmapLayer({
-        data: new google.maps.MVCArray(this.toGeoCollection())
+        data: new google.maps.MVCArray(this.toGeoWeightCollection())
       });
     }
   });
