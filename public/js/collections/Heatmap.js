@@ -15,7 +15,6 @@ define([
     },
 
     getHeatmap: function() {
-      console.log(this.colors);
       return new google.maps.visualization.HeatmapLayer({
         data: new google.maps.MVCArray(this.toGeoWeightCollection()),
         radius: (this.radius) ? parseInt(this.radius, 10) : 20,

@@ -1,15 +1,21 @@
 
 define([
+  'underscore',
   'backbone',
   'models/Coordinate'
-], function(Backbone, Coordinate) {
+], function(_, Backbone, Coordinate) {
   var Base = Backbone.Collection.extend({
     initialize: function(props) {
       this.url = props.url;
       this.colors = null;
 
       if (props.colors) {
-        this.colors = props.colors;
+        if (!_.isArray(props.colors)) {
+          console.log('prop called', typeof(JSON.parse(props.colors)));
+          this.colors = JSON.parse(props.colors);
+        } else {
+          this.colors = props.colors;
+        }
       }
 
       if (props.radius) {
