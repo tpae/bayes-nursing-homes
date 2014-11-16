@@ -4,7 +4,7 @@ define([
   'models/Coordinate'
 ], function(Base, Coordinate) {
   var Marker = Base.extend({    
-    url: '/csv?file=nurse_home_viz.csv',
+    url: '',
 
     render: function(map) {
       this.setAllMap(map);

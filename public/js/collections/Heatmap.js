@@ -3,8 +3,8 @@ define([
   'collections/Base',
   'models/Coordinate'
 ], function(Base, Coordinate) {
-  var Heatmap = Base.extend({    
-    url: '/csv?file=nurse_home_viz.csv',
+  var Heatmap = Base.extend({
+    url: '',
 
     render: function(map) {
       if (!this.heatmap) {

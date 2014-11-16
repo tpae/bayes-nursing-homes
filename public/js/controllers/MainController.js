@@ -2,30 +2,28 @@
 define([
   'backbone',
   'map',
-  'collections/Heatmap'
-], function(Backbone, Map, Heatmap) {
+  'modules/Factory'
+], function(Backbone, Map, Factory) {
   var MainController = Backbone.Controller.extend({
-
     // preliminary routes, will be used for filters
     routes: {
-      '': 'index'
+      '*actions': 'index'
     },
 
     initialize: function() {
       var self = this;
+
       // initialize map and render
       this.map = new Map($('#map')[0]).render();
 
-      // load collections, then render the instance
-      this.collection = new Heatmap();
-      this.collection.fetch();
-      this.collection.on('sync', function() {
-        this.render(self.map.instance);
-      });
+      // initiate factory
+      this.factory = new Factory(this.map);
     },
 
-    index: function() {
-      // index goes here
+    index: function(action) {
+      if (action) {
+        this.factory.setQuery(action).build();
+      }
     }
   });
 
