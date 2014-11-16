@@ -40,32 +40,16 @@
         <div role="tabpanel" class="tab-pane fade in active" id="oldpeople">
           <h3>Old people</h3>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="house">
+        <div role="tabpanel" class="tab-pane fade" id="house" style="overflow: auto; height: 350px">
           <ul class="checkboxlist">
-            <li class="checkbox">
-              <label>
-                <input type="checkbox" class="mapToggle" data-key="heatmap:cost_self_pay" />
-                Self pay
-              </label>
+            <% for (var key in labels) { %>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox" class="mapToggle" data-key="<%=labels[key].type %>:<%=key %>" />
+                  <%= labels[key].description %>
+                </label>
             </li>
-            <li class="checkbox">
-              <label>
-                <input type="checkbox" class="mapToggle" data-key="heatmap:net_income_margin" />
-                Income margin
-              </label>
-            </li>
-            <li class="checkbox">
-              <label>
-                <input type="checkbox" class="mapToggle" data-key="heatmap:num_beds" />
-                Number of beds
-              </label>
-            </li>
-            <li class="checkbox">
-              <label>
-                <input type="checkbox"  class="mapToggle" data-key="heatmap:quality" />
-                Quality
-              </label>
-            </li>
+            <% } %>
           </ul>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="warning">
