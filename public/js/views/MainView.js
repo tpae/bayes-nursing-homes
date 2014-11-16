@@ -1,5 +1,9 @@
 
-define(['underscore', 'backbone'], function(_, Backbone) {
+define([
+  'underscore', 
+  'backbone',
+  'models/Congress'
+], function(_, Backbone, Congress) {
   var MainView = Backbone.View.extend({
     events: {
       'click .tabs-toggle': 'toggleFooter',
@@ -17,6 +21,8 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         var element = $(element);
         self.query.push(element.data('key'));
       });
+
+      this.pullCongress();
     },
 
     onlyNumbers: function(e) {
@@ -29,8 +35,29 @@ define(['underscore', 'backbone'], function(_, Backbone) {
       }
     },
 
+    pullCongress: function() {
+      var congress = new Congress({
+        zip: $('#search-input').val()
+      });
+
+      congress.fetch();
+      
+      congress.once('sync', function() {
+        var results = this.get('results');
+        var member = _.first(results);
+        $('#congress .name').html(member.title + ' ' + member.first_name + ' ' + member.last_name);
+        $('#congress .phone').html(member.phone);
+        if (member.twitter_id) {
+          $('#congress .tweet').attr('href', 'https://twitter.com/intent/tweet?screen_name=' + member.twitter_id);
+        } else {
+          $('#congress .tweet').hide();
+        }
+      });
+    },
+
     search: function(e) {
       e.preventDefault();
+      this.pullCongress();
       this.map.search($('#search-input').val(), _.noop);
     },
 
@@ -45,7 +72,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         }
       } else {
         e.preventDefault();
-        
+
         if (target.hasClass('selected')) {
           this.query.remove(target.data('key'));
           target.removeClass('selected');

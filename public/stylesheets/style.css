@@ -262,3 +262,35 @@ li.active .tabs-toggle.warning {
   font-size: 16px;
   margin-bottom: 15px;
 }
+
+#congress {
+  position: absolute;
+  bottom: 75px;
+  margin-left: 30px;
+  padding: 0 20px;
+  border-left: 3px solid #92AEC3;
+}
+
+#congress h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+#congress p {
+  font-family: Dinot Bold;
+  font-weight: bold;
+  line-height: 12px;
+}
+
+#congress .phone {
+  margin-bottom: 20px;
+}
+
+#congress a {
+  text-transform: uppercase;
+  background-color: #3C94D4;
+  color: #fff;
+  margin-bottom: 10px;
+}
