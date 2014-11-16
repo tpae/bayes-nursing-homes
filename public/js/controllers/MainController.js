@@ -27,7 +27,8 @@ define([
       // initialize view
       this.view = new MainView({
         el: $('#main'),
-        query: this.query
+        query: this.query,
+        map: this.map
       });
     },
 

@@ -17,10 +17,12 @@
         <button class="btn btnDefault low-income selected"><img src="/images/clustericon.png" />Cluster 3 : Low Income</button>
       </div>
       <div id="navigation">
-        <ul class="search">
-          <li><input type="text" value="94107" placeholder="94107" /></li>
-          <li><a href="#"><img src="/images/searchicon.png" /></a></li>
-        </ul>
+        <form id="search-form">
+          <ul class="search">
+            <li><input id="search-input" type="text" value="94107" placeholder="94107" maxlength="5" /></li>
+            <li><input type="image" src="/images/searchicon.png" /></li>
+          </ul>
+        </form>
         <ul class="tabs" role="tablist">
           <li class="active">
             <a class="tabs-toggle oldpeople" href="#oldpeople" role="tab" data-toggle="tab"></a>

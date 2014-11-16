@@ -155,6 +155,10 @@ body {
   margin-right: 4px;
 }
 
+#search-form {
+  float: left;
+}
+
 #navigation li {
   margin: 0;
   padding: 0;
@@ -168,7 +172,7 @@ body {
   background-color: #92aec3;
 }
 
-#navigation .search input {
+#navigation .search input[type="text"] {
   font-family: Dinot Bold;
   border: 0;
   font-size: 36px;
@@ -178,6 +182,12 @@ body {
   margin-left: 40px;
   margin-right: 10px;
   margin-top: -2px;
+}
+
+#navigation .search input[type="image"] {
+  display: block;
+  top: 20px;
+  position: absolute;
 }
 
 ::-webkit-input-placeholder {
@@ -194,12 +204,6 @@ body {
 
 :-ms-input-placeholder {  
    color: #ccc;  
-}
-
-#navigation .search a {
-  display: block;
-  top: 20px;
-  position: absolute;
 }
 
 .tabs-toggle {
