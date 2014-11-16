@@ -36,14 +36,23 @@ define(['underscore', 'backbone'], function(_, Backbone) {
 
     toggleMap: function(e) {
       var target = $(e.currentTarget);
-      e.preventDefault();
 
-      if (target.hasClass('selected')) {
-        this.query.remove(target.data('key'));
-        target.removeClass('selected');
+      if (target.is('input')) {
+        if (target.is(':checked')) {
+          this.query.push(target.data('key'));
+        } else {
+          this.query.remove(target.data('key'));
+        }
       } else {
-        this.query.push(target.data('key'));
-        target.addClass('selected');
+        e.preventDefault();
+        
+        if (target.hasClass('selected')) {
+          this.query.remove(target.data('key'));
+          target.removeClass('selected');
+        } else {
+          this.query.push(target.data('key'));
+          target.addClass('selected');
+        }
       }
     },
 
