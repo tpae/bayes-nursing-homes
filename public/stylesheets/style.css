@@ -43,8 +43,7 @@ body {
   top: 0;
   right: 0;
   height: 100%;
-  width: 45%;
-  background-color: #fff;
+  background: rgba(255,255,255, 0.8);
 }
 
 #footer {
@@ -191,9 +190,14 @@ li.active .tabs-toggle.warning {
 #navigation .tabs {
   height: 68px;
   background-color: #EBEBEB;
+  margin-right: 0;
 }
 
 #navigation .tabs li {
   padding: 20px;
   padding-top: 2px;
+}
+
+.tab-pane {
+  padding: 30px 50px;
 }

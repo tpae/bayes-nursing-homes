@@ -2,8 +2,8 @@
 define(['underscore'], function(_) {
   function Map(element, option) {
     this.defaults = {
-      center: { lat: 36.7700, lng: -113.3462 },
-      zoom: 6,
+      center: { lat: 38.3700, lng: -118.6462 },
+      zoom: 7,
       panControl: true,
       zoomControl: true,
       mapTypeControl: false,
@@ -34,7 +34,7 @@ define(['underscore'], function(_) {
           { "visibility": "off" }
         ]
       },{
-        "featureType": "landscape",
+        "featureType": "all",
         "elementType": "labels",
         "stylers": [
           { "visibility": "off" }
@@ -42,6 +42,12 @@ define(['underscore'], function(_) {
       },{
         "featureType": "administrative.country",
         "elementType": "geometry.fill",
+        "stylers": [
+          { "visibility": "on" }
+        ]
+      },{
+        "featureType": "administrative.province",
+        "elementType": "labels",
         "stylers": [
           { "visibility": "on" }
         ]
