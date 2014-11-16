@@ -296,5 +296,10 @@ li.active .tabs-toggle.warning {
 }
 
 #oldpeople h5 {
-  font-size: 16px;
+  font-size: 40px;
+  white-space: pre-wrap;
+}
+
+#oldpeople h5 b {
+  font-family: Dinot Bold;
 }
