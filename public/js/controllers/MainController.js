@@ -15,29 +15,12 @@ define([
       this.collection = new BaseCollection();
       this.collection.fetch();
       this.collection.on('sync', function() {
-        self.buildHeatmap();
+        self.map.render(this.getHeatmap());
       });
     },
 
-    buildHeatmap: function() {
-      var heatmap = new google.maps.visualization.HeatmapLayer({
-        data: new google.maps.MVCArray(this.collection.toGeoData())
-      });
-
-      this.map.render(heatmap);
-    },
-
-    index: function() {
-      this.map = new Map($('#map')[0], {
-        center: { lat: 37.7833, lng: -122.4167 },
-        zoom: 8,
-        panControl: true,
-        zoomControl: true,
-        mapTypeControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        overviewMapControl: false
-      });
+    renderMap: function() {
+      this.map = new Map($('#map')[0]);
 
       this.map.addStyle({
         featureType: "road",
@@ -49,6 +32,10 @@ define([
       });
 
       this.map.render();
+    },
+
+    index: function() {
+      this.renderMap();
     }
   });
 
