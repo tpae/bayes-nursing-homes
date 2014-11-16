@@ -1,0 +1,49 @@
+{
+  "name": "backbone.controller",
+  "main": "backbone.controller.js",
+  "homepage": "https://github.com/artyomtrityak/backbone.controller",
+  "authors": [
+    "Artyom Trityak <art.trityak@gmail.com>"
+  ],
+  "description": "Controller for Backbone.js applications",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "controller",
+    "backbone",
+    "router",
+    "client",
+    "browser",
+    "mvc"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    ".gitignore",
+    ".travis.yml",
+    "README.md"
+  ],
+  "dependencies": {
+    "backbone": "latest",
+    "underscore": "latest"
+  },
+  "_release": "38ac0f0942",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "38ac0f0942f63156886728e5aa1dc5a7efb0f827"
+  },
+  "_source": "git://github.com/artyomtrityak/backbone.controller.git",
+  "_target": "*",
+  "_originalSource": "backbone.controller",
+  "_direct": true
+}
