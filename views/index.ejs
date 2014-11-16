@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Bayes Hackathon</title>
-
+    <link rel="stylesheet" href="/js/libs/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <script src="https://maps.googleapis.com/maps/api/js?libraries=visualization"></script>
     <script data-main="js/main" src="js/libs/requirejs/require.js"></script>
@@ -10,5 +10,46 @@
   </head>
   <body>
     <div id="map"></div>
+    <div id="main">
+      <div id="navigation">
+        <ul class="search">
+          <li><input type="text" value="94107" placeholder="94107" /></li>
+          <li><a href="#"><img src="/images/searchicon.png" /></a></li>
+        </ul>
+        <ul class="tabs" role="tablist">
+          <li class="active">
+            <a class="tabs-toggle oldpeople" href="#oldpeople" role="tab" data-toggle="tab">
+            </a>
+          </li>
+          <li>
+            <a class="tabs-toggle house" href="#house" role="tab" data-toggle="tab">
+            </a>
+          </li>
+          <li>
+            <a class="tabs-toggle warning" href="#warning" role="tab" data-toggle="tab">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <div id="content" class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="oldpeople">
+          <h3> Old people </h3>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="house">
+          <h3> House </h3>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="warning">
+          <h3> Warning </h3>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <ul class="filter">
+        <li>-20 Years</li>
+        <li class="active">Now</li>
+        <li>+20 Years</li>
+      </ul>
+    </div>
   </body>
 </html>

@@ -1,5 +1,191 @@
+@font-face {
+  font-family: Dinot;
+  src: url('/fonts/DINOT-Regular.otf') format("opentype");
+}
+
+@font-face {
+  font-family: Dinot Bold;
+  src: url('/fonts/DINOT-Bold.otf') format("opentype");
+}
+
+@font-face {
+  font-family: Dinot Light;
+  src: url('/fonts/DINOT-Light.otf') format("opentype");
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: Dinot;
+}
+
+body {
+  margin: 0;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
 
 #map {
   width: 100%;
-  height: 600px;
+  height: 100%;
+}
+
+#main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 45%;
+  background-color: #fff;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 99999999;
+  background-color: #EBEBEB;
+  border-top: 4px solid #000;
+  width: 100%;
+  height: 55px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Dinot;
+}
+
+#footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+#footer li {
+  display: inline-block;
+  width: 20%;
+  margin-top: 15px;
+}
+
+#footer .filter li:after {
+  content: url('/images/timetriangle.png');
+  position: relative;
+  z-index: 100000;
+  top: -42px;
+  display: block;
+  visibility: hidden;
+}
+
+#footer .filter li.active:after {
+  content: url('/images/timetriangle.png');
+  position: relative;
+  z-index: 100000;
+  top: -42px;
+  display: block;
+  visibility: visible;
+}
+
+#navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  float: left;
+  margin-right: 4px;
+}
+
+#navigation li {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+#navigation .search {
+  width: 260px;
+  height: 68px;
+  background-color: #92aec3;
+}
+
+#navigation .search input {
+  font-family: Dinot Bold;
+  border: 0;
+  font-size: 36px;
+  width: 150px;
+  background-color: #92aec3;
+  color: #3c5364;
+  margin-left: 40px;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+::-webkit-input-placeholder {
+   color: #ccc;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #ccc;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ccc;  
+}
+
+:-ms-input-placeholder {  
+   color: #ccc;  
+}
+
+#navigation .search a {
+  display: block;
+  top: 20px;
+  position: absolute;
+}
+
+.tabs-toggle {
+  width: 35px;
+  height: 35px;
+  padding: 20px;
+  padding-top: 0;
+  display: block;
+}
+
+.tabs-toggle.oldpeople {
+  background: url('/images/oldpeople_icon.png') 0 0 no-repeat;
+}
+
+li.active .tabs-toggle.oldpeople {
+  background: url('/images/oldpeople_icon_active.png') 0 0 no-repeat;
+}
+
+.tabs-toggle.house {
+  background: url('/images/house_icon.png') 0 0 no-repeat;
+}
+
+li.active .tabs-toggle.house {
+  background: url('/images/house_icon_active.png') 0 0 no-repeat;
+}
+
+.tabs-toggle.warning {
+  background: url('/images/warning_icon.png') 0 0 no-repeat;
+}
+
+li.active .tabs-toggle.warning {
+  background: url('/images/warning_icon_active.png') 0 0 no-repeat;
+}
+
+#navigation .tabs {
+  height: 68px;
+  background-color: #EBEBEB;
+}
+
+#navigation .tabs li {
+  padding: 20px;
+  padding-top: 2px;
 }

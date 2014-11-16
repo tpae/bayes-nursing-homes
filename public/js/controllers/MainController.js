@@ -2,8 +2,9 @@
 define([
   'backbone',
   'map',
-  'modules/Factory'
-], function(Backbone, Map, Factory) {
+  'modules/Factory',
+  'views/MainView'
+], function(Backbone, Map, Factory, MainView) {
   var MainController = Backbone.Controller.extend({
     // preliminary routes, will be used for filters
     routes: {
@@ -13,11 +14,16 @@ define([
     initialize: function() {
       var self = this;
 
-      // initialize map and render
+      // initialize map then render
       this.map = new Map($('#map')[0]).render();
 
-      // initiate factory
+      // initialize factory
       this.factory = new Factory(this.map);
+
+      // initialize view
+      this.view = new MainView({
+        el: $('#main')
+      });
     },
 
     index: function(action) {

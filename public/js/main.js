@@ -5,6 +5,7 @@ require.config({
     'underscore': 'libs/underscore/underscore',
     'backbone':   'libs/backbone/backbone',
     'controller': 'libs/backbone.controller/backbone.controller',
+    'bootstrap':  'libs/bootstrap/dist/js/bootstrap.min',
     'map':        'modules/Map'
   },
   shim: {
