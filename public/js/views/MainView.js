@@ -6,8 +6,14 @@ define(['backbone'], function(Backbone) {
       'click .mapToggle': 'toggleMap'
     },
 
-    initialize: function() {
-      
+    initialize: function(props) {
+      var self = this;
+      this.query = props.query;
+
+      this.$('.mapToggle.selected').each(function(i, element) {
+        var element = $(element);
+        self.query.push(element.data('key'));
+      });
     },
 
     toggleMap: function(e) {
@@ -15,8 +21,10 @@ define(['backbone'], function(Backbone) {
       e.preventDefault();
 
       if (target.hasClass('selected')) {
+        this.query.remove(target.data('key'));
         target.removeClass('selected');
       } else {
+        this.query.push(target.data('key'));
         target.addClass('selected');
       }
     },

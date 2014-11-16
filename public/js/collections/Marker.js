@@ -14,7 +14,7 @@ define([
       if (!this.markers) {
         this.markers = this.toMarkerCollection();
       }
-
+      
       for (var i = 0; i < this.markers.length; i++) {
         this.markers[i].setMap(map);
       }

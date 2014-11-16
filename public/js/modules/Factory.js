@@ -2,11 +2,11 @@
 define([
   'underscore',
   'collections/Heatmap',
-  'collections/Marker'
-], function(_, Heatmap, Marker) {
+  'collections/Marker',
+  'modules/Query'
+], function(_, Heatmap, Marker, Query) {
   function Factory(map, query) {
     this.map = map;
-    this.query = query;
 
     // different types of collections
     this.types = {
@@ -17,18 +17,14 @@ define([
     // list of collections
     this.collections = {};
 
-    return this;
-  }
-
-  Factory.prototype.setQuery = function(query) {
     this.query = query;
 
     return this;
-  };
+  }
 
-  Factory.prototype.build = function() {
+  Factory.prototype.build = function(query) {
     var self = this;
-    var results = this.parse();
+    var results = this.query.set(query);
 
     this.hideAll();
     
@@ -53,21 +49,9 @@ define([
 
   Factory.prototype.hideAll = function() {
     _.each(this.collections, function(collection) {
-      collection.render();
+      collection.render(null);
     });
-  },
-
-  Factory.prototype.parse = function() {
-    var components = this.query.split(';');
-
-    var results = [];
-    for(var i = 0; i < components.length; i++) {
-      var component = components[i].split(':');
-      results.push({ key: components[i], type: component[0], name: component[1] });
-    }
-
-    return results;
-  };
+  }
 
   return Factory;
 });
