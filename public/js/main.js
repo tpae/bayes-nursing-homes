@@ -16,12 +16,15 @@ require.config({
     controller: {
       deps: ['underscore', 'backbone']
     },
+    bootstrap: {
+      deps: ['jquery']
+    },
     loader: ['controller'],
     app: ['controller']
   },
   waitSeconds: 10
 });
 
-require(['jquery', 'underscore', 'backbone', 'loader'], function($, _, Backbone, Loader) {
+require(['jquery', 'underscore', 'backbone', 'loader', 'bootstrap'], function($, _, Backbone, Loader, bootstrap) {
   Backbone.history.start();
 });

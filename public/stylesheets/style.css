@@ -46,6 +46,53 @@ body {
   background: rgba(255,255,255, 0.8);
 }
 
+#button-overlay {
+  position: absolute;
+  margin-left: -320px;
+  margin-top: 20px;
+}
+
+#button-overlay button {
+  display: block;
+  margin-bottom: 4px;
+  width: 260px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #fff;
+  opacity: 0.2;
+  font-weight: normal;
+  font-family: Dinot Light;
+}
+
+#button-overlay button.selected {
+  opacity: 0.9;
+}
+
+#button-overlay .state {
+  background-color: #5A797E;
+}
+
+#button-overlay .private {
+  background-color: #EA9B81;
+}
+
+#button-overlay .low-income {
+  background-color: #776E87;
+}
+
+#button-overlay img {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+
+#button-overlay img {
+  width: 15px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+
 #footer {
   position: absolute;
   bottom: 0;

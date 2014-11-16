@@ -1,12 +1,24 @@
 
-define(['backbone', 'bootstrap'], function(Backbone, bootstrap) {
+define(['backbone'], function(Backbone) {
   var MainView = Backbone.View.extend({
     events: {
-      'click .tabs-toggle': 'toggleFooter'
+      'click .tabs-toggle': 'toggleFooter',
+      'click .mapToggle': 'toggleMap'
     },
 
     initialize: function() {
+      
+    },
 
+    toggleMap: function(e) {
+      var target = $(e.currentTarget);
+      e.preventDefault();
+
+      if (target.hasClass('selected')) {
+        target.removeClass('selected');
+      } else {
+        target.addClass('selected');
+      }
     },
 
     toggleFooter: function(e) {
