@@ -17,11 +17,15 @@ define(function() {
     return new google.maps.StyledMapType(this.styles, { name: 'Styled Map' });
   };
 
-  Map.prototype.render = function() {
+  Map.prototype.render = function(heatmap) {
     if (!this.map) {
       this.map = new google.maps.Map(this.element, this.option);
       this.map.mapTypes.set('map_style', this.getStyle());
       this.map.setMapTypeId('map_style');
+    } else {
+      if (heatmap) {
+        heatmap.setMap(this.map);
+      }
     }
   };
 

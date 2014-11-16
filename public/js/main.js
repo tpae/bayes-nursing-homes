@@ -21,29 +21,6 @@ require.config({
   waitSeconds: 10
 });
 
-require(['jquery', 'underscore', 'backbone', 'loader', 'map'], function($, _, Backbone, Loader, Map) {
-  
-  var map = new Map($('#map')[0], {
-    center: { lat: 37.7833, lng: -122.4167 },
-    zoom: 8,
-    panControl: true,
-    zoomControl: true,
-    mapTypeControl: false,
-    scaleControl: false,
-    streetViewControl: false,
-    overviewMapControl: false
-  });
-
-  map.addStyle({
-    featureType: "road",
-    elementType: "geometry",
-    stylers: [
-      { lightness: 100 },
-      { visibility: "simplified" }
-    ]
-  });
-
-  map.render();
-
+require(['jquery', 'underscore', 'backbone', 'loader'], function($, _, Backbone, Loader) {
   Backbone.history.start();
 });
