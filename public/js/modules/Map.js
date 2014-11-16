@@ -2,8 +2,8 @@
 define(['underscore'], function(_) {
   function Map(element, option) {
     this.defaults = {
-      center: { lat: 37.7833, lng: -122.4167 },
-      zoom: 8,
+      center: { lat: 36.7700, lng: -113.3462 },
+      zoom: 6,
       panControl: true,
       zoomControl: true,
       mapTypeControl: false,

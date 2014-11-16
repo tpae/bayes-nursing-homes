@@ -92,6 +92,14 @@ body {
   visibility: visible;
 }
 
+#footer a {
+  color: #000;
+}
+
+#footer a:hover {
+  text-decoration: none;
+}
+
 #navigation ul {
   margin: 0;
   padding: 0;
