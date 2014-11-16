@@ -4,7 +4,9 @@ define(['backbone'], function(Backbone) {
     defaults: {
       latitude: null,
       longtitude: null,
-      norm_score: false
+      norm_score: false,
+      label: null,
+      image: null
     },
 
     toLocation: function() {
@@ -20,7 +22,8 @@ define(['backbone'], function(Backbone) {
 
     toGeoMarker: function() {
       return new google.maps.Marker({
-        position: this.toLocation()
+        position: this.toLocation(),
+        icon: '/images/' + this.get('image') + '.png'
       });
     }
   });

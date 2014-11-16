@@ -3,7 +3,7 @@ define([
   'collections/Base',
   'models/Coordinate'
 ], function(Base, Coordinate) {
-  var Marker = Base.extend({    
+  var Marker = Base.extend({
     url: '',
 
     render: function(map) {
