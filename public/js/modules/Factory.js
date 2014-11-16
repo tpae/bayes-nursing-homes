@@ -34,7 +34,7 @@ define([
 
     for(var i = 0; i < results.length; i++) {
       this.collections[results[i].key] = new this.types[results[i].type]({
-        url: '/csv?file=nurse_home_viz.csv'
+        url: '/api/csv?file=nurse_home_viz'
       });
 
       this.collections[results[i].key].fetch();
