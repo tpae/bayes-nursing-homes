@@ -11,10 +11,12 @@ define([
     },
 
     setAllMap: function(map) {
-      var markers = this.toMarkerCollection();
+      if (!this.markers) {
+        this.markers = this.toMarkerCollection();
+      }
 
-      for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(map);
+      for (var i = 0; i < this.markers.length; i++) {
+        this.markers[i].setMap(map);
       }
     },
 

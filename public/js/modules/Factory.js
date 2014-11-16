@@ -1,8 +1,9 @@
 
 define([
+  'underscore',
   'collections/Heatmap',
   'collections/Marker'
-], function(Heatmap, Marker) {
+], function(_, Heatmap, Marker) {
   function Factory(map, query) {
     this.map = map;
     this.query = query;
@@ -29,23 +30,32 @@ define([
     var self = this;
     var results = this.parse();
 
-    // empty existing collections
-    this.collectons = {};
-
+    this.hideAll();
+    
     for(var i = 0; i < results.length; i++) {
-      this.collections[results[i].key] = new this.types[results[i].type]({
-        url: '/api/csv?file=nurse_home_viz'
-      });
+      if (this.collections[results[i].key]) {
+        this.collections[results[i].key].render(this.map.instance);
+      } else {
+        this.collections[results[i].key] = new this.types[results[i].type]({
+          url: '/api/csv?file=nurse_home_viz'
+        });
 
-      this.collections[results[i].key].fetch();
+        this.collections[results[i].key].fetch();
 
-      this.collections[results[i].key].on('sync', function() {
-        this.render(self.map.instance);
-      });
+        this.collections[results[i].key].on('sync', function() {
+          this.render(self.map.instance);
+        });
+      }
     }
 
     return this.collections;
   };
+
+  Factory.prototype.hideAll = function() {
+    _.each(this.collections, function(collection) {
+      collection.render();
+    });
+  },
 
   Factory.prototype.parse = function() {
     var components = this.query.split(';');
