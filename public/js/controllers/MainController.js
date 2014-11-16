@@ -1,6 +1,7 @@
 
 define(['backbone'], function(Backbone) {
   var MainController = Backbone.Controller.extend({
+
     routes: {
       '': 'list'
     },
@@ -10,7 +11,7 @@ define(['backbone'], function(Backbone) {
     },
 
     list: function() {
-      console.log('here');
+
     }
   });
 
